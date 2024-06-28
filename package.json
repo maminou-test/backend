@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "private": true,
+  "scripts": {
+    "dev": "node --env-file=.env --watch src/app.js",
+    "debug": "node --env-file=.env --inspect src/app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "express",
+    "node",
+    "photobioreactor",
+    "biology",
+    "research",
+    "chemistry",
+    "science"
+  ],
+  "description": "API for the Photobioreactor project",
+  "author": "Mohamed Amine Ayadi <mohamedamine.ayadi@medtech.tn>",
+  "license": "LGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:medamine-ayadi/photobioreactor-api.git"
+  },
+  "bugs": "https://github.com/medamine-ayadi/photobioreactor-api/issues",
+  "homepage": "https://github.com/medamine-ayadi/photobioreactor-api#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
