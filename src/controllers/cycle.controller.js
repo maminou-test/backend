@@ -1,21 +1,22 @@
 const { Cycle } = require('../models/index');
-function readAllCycles(request, response) {
-	console.log(request.params);
-	return response.json(Cycle.findAll());
+
+readAllCycles = async (request, response) => {
+	return response.json(await Cycle.findAll());
 }
-function addCycle(request, response) {
-	console.log(request.params);
+addCycle = async (request, response) => {
 	const body = request.body;
-	return response.json(body);
+	const query = await Cycle.create(body);
+	return response.json(query);
 }
-function updateCycle(request, response) {
-	console.log(request.params);
+updateCycle = async (request, response) => {
 	const body = request.body;
-	return response.json(body);
+	const params = request.params;
+	const query = await Cycle.update({ body }, { where: { id: params.id } });
+	return response.status().json(query);
 }
-function deleteCycle(request, response) {
-	console.log(request.params);
-	const body = request.body;
-	return response.json(body);
+deleteCycle = async (request, response) => {
+	const params = request.params;
+	const query = await Cycle.destroy({ where: { id: params.id } });
+	return response.status().json(query);
 }
 module.exports = { readAllCycles, addCycle, updateCycle, deleteCycle };
